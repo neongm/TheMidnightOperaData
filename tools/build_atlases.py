@@ -220,17 +220,11 @@ def build_atlas(atlas_name: str, src_folder: str, out_folder: str):
 
         # Resize & paste if we have an image
         if img is not None:
-            # resize-to-cover then center-crop
+            # resize to fit exactly into slot dimensions
             w_slot = int(slot["w"]); h_slot = int(slot["h"])
-            w_img, h_img = img.size
-            scale = max(w_slot / w_img, h_slot / h_img)
-            new_w = int(round(w_img * scale)); new_h = int(round(h_img * scale))
-            img = img.resize((new_w, new_h), resample=Image.LANCZOS)
-            left = (new_w - w_slot) // 2
-            top = (new_h - h_slot) // 2
-            img = img.crop((left, top, left + w_slot, top + h_slot))
+            img = img.resize((w_slot, h_slot), resample=Image.LANCZOS)
             canvas.paste(img, (int(slot["x"]), int(slot["y"])), img)
-
+            
         mapping[str(idx)] = {
             "x": int(slot["x"]), "y": int(slot["y"]),
             "w": int(slot["w"]), "h": int(slot["h"]),
