@@ -40,5 +40,6 @@ jobs:
             echo "No atlas changes to commit."
           else
             git commit -m "Auto-build atlases [ci]" || true
+            git pull --rebase origin main
             git push
           fi
