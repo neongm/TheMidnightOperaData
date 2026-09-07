@@ -50,14 +50,14 @@
       "y": 512,
       "w": 512,
       "h": 512,
-      "source": "7.png"
+      "source": "placeholder.png"
     },
     "8": {
       "x": 1536,
       "y": 512,
       "w": 512,
       "h": 512,
-      "source": "8.png"
+      "source": "placeholder.png"
     },
     "9": {
       "x": 0,
