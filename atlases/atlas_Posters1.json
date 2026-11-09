@@ -36,14 +36,14 @@
       "y": 512,
       "w": 512,
       "h": 512,
-      "source": "5.png"
+      "source": "placeholder.png"
     },
     "6": {
       "x": 512,
       "y": 512,
       "w": 512,
       "h": 512,
-      "source": "placeholder.png"
+      "source": "6.png"
     },
     "7": {
       "x": 1024,
